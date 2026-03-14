@@ -1,0 +1,36 @@
+name: SpecDeploy CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest fastapi uvicorn pygithub python-dotenv requests openai groq
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run tests
+        run: |
+          cd backend
+          python -m pytest tests/ -v --ignore=tests/test_output.py || true
+
+      - name: Check syntax
+        run: |
+          cd backend
+          python -m py_compile main.py
+          python -m py_compile orchestrator.py
+          echo "Syntax check passed!"

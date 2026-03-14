@@ -1,0 +1,173 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 52px;
+  font-weight: 800;
+  color: #58a6ff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #8b949e;
+  font-size: 18px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.label {
+  color: #8b949e;
+  font-size: 13px;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.textarea {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 14px;
+  color: white;
+  font-size: 16px;
+  resize: none;
+  height: 120px;
+  outline: none;
+  font-family: inherit;
+}
+
+.textarea:focus {
+  border-color: #58a6ff;
+}
+
+.button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 14px;
+  background: #238636;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #2ea043;
+}
+
+.button:disabled {
+  background: #21262d;
+  cursor: not-allowed;
+}
+
+.progress-title {
+  color: #8b949e;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #21262d;
+  font-size: 15px;
+}
+
+.done {
+  color: #3fb950;
+  font-weight: 600;
+}
+
+.running {
+  color: #58a6ff;
+  font-weight: 700;
+}
+
+.waiting {
+  color: #484f58;
+}
+
+.success-card {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid #238636;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.success-card h2 {
+  color: #3fb950;
+  margin-bottom: 20px;
+}
+
+.file {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  color: #58a6ff;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.reset {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #8b949e;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.reset:hover {
+  border-color: #58a6ff;
+  color: #58a6ff;
+}
+
+.error {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid #da3633;
+  border-radius: 16px;
+  padding: 24px;
+  color: #f85149;
+  text-align: center;
+}
