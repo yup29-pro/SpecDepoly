@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
   theme: {
     light: {
       background: '#ffffff',
@@ -10,5 +10,3 @@ const config = {
     }
   }
 };
-
-module.exports = config;
