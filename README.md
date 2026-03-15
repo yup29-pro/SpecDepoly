@@ -160,7 +160,8 @@ SpecDeploy demonstrates:
 
 ## 👨‍💻 Built By
 
-**yup29-pro** — Built with Groq, FastAPI, React, and GitHub Actions
+**yup29-pro** - Yashwanth R
+**git791** - Mohammed Ayaan Adil Ahmed
 
 ---
 
