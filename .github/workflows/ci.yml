@@ -1,36 +1,33 @@
-name: SpecDeploy CI
+name: Stripe Payment Integration CI/CD
 
 on:
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: Set up Python environment
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: '3.10'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest fastapi uvicorn pygithub python-dotenv requests openai groq
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install -r requirements.txt
 
       - name: Run tests
         run: |
-          cd backend
-          python -m pytest tests/ -v --ignore=tests/test_output.py || true
+          python -m unittest discover -s . -p 'test_*.py'
 
-      - name: Check syntax
+      - name: Run linting
         run: |
-          cd backend
-          python -m py_compile main.py
-          python -m py_compile orchestrator.py
-          echo "Syntax check passed!"
+          pip install flake8
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
